@@ -9,8 +9,8 @@ module.exports = {
 	synchronize: true,
 	logging: false,
 	// dropSchema: true,
-	entities: ['src/entities/**/*.ts'],
-	migrations: ['src/migrations/**/*.ts'],
+	entities: ['src/entities/*.ts'],
+	migrations: ['src/migrations/*.ts'],
 	cli: {
 		entitiesDir: 'src/entities',
 		migrationsDir: 'src/migrations',
