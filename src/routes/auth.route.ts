@@ -1,10 +1,11 @@
 import express from 'express'
 
 // Controllers
-import { getRoleList } from '../controllers/auth.controller'
+import { createRole, getRoleList } from '../controllers/auth.controller'
 
 const router = express.Router()
 
 router.get('/role_list', getRoleList)
+router.post('/create_role', createRole)
 
 export default router

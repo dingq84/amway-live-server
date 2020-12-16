@@ -2,6 +2,7 @@ import 'reflect-metadata'
 import express, { Application, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import { createConnection } from 'typeorm'
+import bodyParser from 'body-parser'
 
 // Routes
 import auth from './routes/auth.route'
@@ -14,10 +15,7 @@ const app: Application = express()
 
 createConnection()
 
-app.get('/', (request: Request, response: Response) =>
-	response.send('Express + TypeScript Server')
-)
-
+app.use(bodyParser.json())
 app.use('/auth', auth)
 app.listen(PORT, (): void => {
 	console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`)
